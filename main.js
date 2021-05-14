@@ -1,24 +1,14 @@
 const app = Vue.createApp({
   data: () => ({
-    cart: 0,
-    product: "Socks",
-    description: "Very comfortable Vue socks",
-    image: "./assets/images/socks_green.jpg",
-    inventory: 10,
-    onSale: true,
-    details: ["50% cotton", "30% wool", "20% polyester"],
-    variants: [
-      { id: 2234, color: "green", image: "./assets/images/socks_green.jpg" },
-      { id: 2235, color: "blue", image: "./assets/images/socks_blue.jpg" },
-    ],
-    sizes: ["XS", "S", "M", "L", "XL"],
+    cart: [],
+    premium: false,
   }),
   methods: {
-    addToCart() {
-      this.cart += 1;
+    addToCart(id) {
+      this.cart.push(id);
     },
-    updateImage(variantImage) {
-      this.image = variantImage;
+    removeFromFromCart(id) {
+      this.cart = this.cart.filter((item) => item.id === id);
     },
   },
 });
