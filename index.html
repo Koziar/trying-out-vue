@@ -29,7 +29,11 @@
               <li v-for="detail in details">{{ detail }}</li>
             </ul>
             <p>Variants:</p>
-            <div :key="variant.id" v-for="variant in variants">
+            <div
+              :key="variant.id"
+              v-for="variant in variants"
+              @mouseover="updateImage(variant.image)"
+            >
               {{ variant.color }}
             </div>
             <br />
