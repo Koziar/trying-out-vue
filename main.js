@@ -3,5 +3,6 @@ const app = Vue.createApp({
     product: "Socks",
     description: "Very comfortable Vue socks",
     image: "./assets/images/socks_green.jpg",
+    inStock: true,
   }),
 });
