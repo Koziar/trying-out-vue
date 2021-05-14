@@ -18,8 +18,10 @@
             <img :src="image" :alt="description" />
           </div>
           <div class="product-info">
+            <p v-if="onSale">On Sale!</p>
             <h1>{{ product }}</h1>
-            <p v-if="inStock">In Stock</p>
+            <p v-if="inventory > 10">In Stock</p>
+            <p v-else-if="inventory <= 10 && inventory > 0">Almost Sold Out</p>
             <p v-else>Out of Stock</p>
           </div>
         </div>
